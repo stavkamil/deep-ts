@@ -35,7 +35,7 @@ describe("clone function", () => {
     };
 
     const clonedObj = clone(originalObj);
-    expect(clonedObj).toEqual(originalObj); // Check property equality
+    expect(clonedObj).toEqual(originalObj);
     expect(clonedObj).not.toBe(originalObj);
     expect(clonedObj.data.items).toEqual(originalObj.data.items);
     expect(clonedObj.data.items).not.toBe(originalObj.data.items);
@@ -49,14 +49,14 @@ describe("clone function", () => {
   test("should clone an array", () => {
     const arr = [1, 2, 3, 4];
     const clonedArr = clone(arr);
-    expect(clonedArr).toEqual(arr); // Check property equality
+    expect(clonedArr).toEqual(arr);
     expect(clonedArr).not.toBe(arr);
   });
 
   test("should clone a set", () => {
     const set = new Set([1, 2, 3]);
     const clonedSet = clone(set);
-    expect(clonedSet).toEqual(set); // Check property equality
+    expect(clonedSet).toEqual(set);
     expect(clonedSet).not.toBe(set);
   });
 
@@ -67,29 +67,29 @@ describe("clone function", () => {
       ["c", 3],
     ]);
     const clonedMap = clone(map);
-    expect(clonedMap).toEqual(map); // Check property equality
+    expect(clonedMap).toEqual(map);
     expect(clonedMap).not.toBe(map);
   });
 
   test("should clone a RegExp", () => {
     const regex = /test/i;
     const clonedRegex = clone(regex);
-    expect(clonedRegex).toEqual(regex); // Check property equality
+    expect(clonedRegex).toEqual(regex);
     expect(clonedRegex).not.toBe(regex);
   });
 
   test("should clone a Date", () => {
     const date = new Date();
     const clonedDate = clone(date);
-    expect(clonedDate).toEqual(date); // Check property equality
+    expect(clonedDate).toEqual(date);
     expect(clonedDate).not.toBe(date);
   });
 
   test("should handle circular references", () => {
     const obj: any = { name: "John" };
-    obj.self = obj; // Circular reference
+    obj.self = obj;
     const clonedObj = clone(obj);
-    expect(clonedObj).toEqual(obj); // Check property equality
+    expect(clonedObj).toEqual(obj);
     expect(clonedObj.self).toBe(clonedObj);
   });
 });
