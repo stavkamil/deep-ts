@@ -1,7 +1,18 @@
-function add(a: number, b: number) {
-  return a + b;
-}
+import { clone } from "./clone";
 
-add(2, 3);
+const obj: any = {
+  data: 1,
+  children: [
+    {
+      data: 2,
+      parent: null,
+      func: () => console.log("hi"),
+    },
+  ],
+};
 
-export default add;
+const a = ["hello"];
+
+const target = clone(a);
+
+console.log(target);
